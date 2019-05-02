@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'video-service'
+rootProject.name = 'spring-boot-graphql-demo'

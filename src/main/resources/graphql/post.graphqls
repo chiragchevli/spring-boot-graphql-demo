@@ -1,0 +1,16 @@
+type Post {
+  id: ID! 
+  text: String! 
+  imageUrl : String
+  user: User!
+}
+
+extend type Query {
+  findAllPost: [Post]!
+  countPost: Long!
+  countPostOfUser(id: ID!) : Long
+  findPost(id: ID!) : Post
+  findAllPostOfUser(id: ID!) : [Post]
+  
+}
+
