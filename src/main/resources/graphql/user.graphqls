@@ -1,0 +1,21 @@
+type User  {  
+  id: ID! 
+  name : String!
+  posts : [Post]  
+}
+
+type Query {
+  findAllUser: [User]!
+  countUsers: Long!
+  findUserFromPost(id: ID!) : User
+  findUser(id: ID!) : User
+}
+
+type Mutation {
+  newUser(name: String!) : User!
+  deleteUser(id: ID!) : Boolean
+  updateUserName(id: ID!, name: String!) : User!  
+}
+
+
+
