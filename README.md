@@ -21,7 +21,43 @@
   
   **You can Also Run This Application in java Based IDE like STS, Eclipse or intellij**
   
-  **GraphiQL URL: http://localhost:8080/graphiq
+  **GraphiQL URL: http://localhost:8080/graphiq**
+  
+  ###  Schema
+
+    type User  {  
+      id: ID! 
+      name : String!
+      posts : [Post]  
+    }
+    
+    type Post {
+      id: ID! 
+      text: String! 
+      imageUrl : String
+      user: User!
+    }
+
+    type Query {
+      findAllUser: [User]!
+      countUsers: Long!
+      findUserFromPost(id: ID!) : User
+      findUser(id: ID!) : User
+      findAllPost: [Post]!
+      countPost: Long!
+      countPostOfUser(id: ID!) : Long
+      findPost(id: ID!) : Post
+      findAllPostOfUser(id: ID!) : [Post]  
+    }
+
+    type Mutation {
+      newUser(name: String!) : User!
+      deleteUser(id: ID!) : Boolean
+      updateUserName(id: ID!, name: String!) : User!  
+      newPost(text: String!, imageUrl: String!, userId: ID!) : Post!
+      deletePost(id: ID!) : Boolean
+      updatePostText(id: ID!, text: String!) : Post!
+    }
   
   ###  Mutation Example (On GraphiQL)
 
@@ -47,6 +83,8 @@
         name
       }
     }
+    
+  
     
  ### References
  
