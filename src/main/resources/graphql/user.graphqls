@@ -11,3 +11,11 @@ type Query {
   findUser(id: ID!) : User
 }
 
+type Mutation {
+  newUser(name: String!) : User!
+  deleteUser(id: ID!) : Boolean
+  updateUserName(id: ID!, name: String!) : User!  
+}
+
+
+

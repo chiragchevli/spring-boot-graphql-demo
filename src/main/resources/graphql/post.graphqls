@@ -14,3 +14,9 @@ extend type Query {
   
 }
 
+extend type Mutation {
+  newPost(text: String!, imageUrl: String!, userId: ID!) : Post!
+  deletePost(id: ID!) : Boolean
+  updatePostText(id: ID!, text: String!) : Post!  
+}
+
